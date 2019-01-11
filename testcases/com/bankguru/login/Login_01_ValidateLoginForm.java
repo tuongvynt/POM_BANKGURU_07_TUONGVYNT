@@ -31,6 +31,10 @@ public class Login_01_ValidateLoginForm {
   public void TC05() {
   }
   
+  @Test
+  public void TC06() {
+  }
+  
 
   @AfterClass
   public void afterClass() {
