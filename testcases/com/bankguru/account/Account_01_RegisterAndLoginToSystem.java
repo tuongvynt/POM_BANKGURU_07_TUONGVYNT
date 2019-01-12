@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -17,7 +18,10 @@ public class Account_01_RegisterAndLoginToSystem {
 	
   @BeforeClass
   public void beforeClass() {
-	  driver = new FirefoxDriver();
+	  //driver = new FirefoxDriver();
+	  System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
+	  driver = new ChromeDriver();
+		
 	  driver.manage().window().maximize();
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  
