@@ -20,8 +20,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import selenium_api.Commons;
-
 public class AbstractPage {
 
 	/*
@@ -166,8 +164,8 @@ public class AbstractPage {
 		element.click();
 	}
 
-	// sendKeys
-	public void sendKeys(WebDriver driver, String locator, String value) {
+	// sendKeysToElement
+	public void sendKeysToElement(WebDriver driver, String locator, String value) {
 		WebElement element = driver.findElement(By.xpath(locator));
 		element.sendKeys(value);
 	}
