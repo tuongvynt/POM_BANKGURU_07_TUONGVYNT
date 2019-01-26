@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Bank GuRu" parallel="false"> 
+  
+  <test name="Run On Chrome">
+  <parameter name ="browser" value ="chrome"/>
+    <classes>
+       <class name="com.bankguru.account.RegisterLogin_Level3_PageObjectModel"/>
+    </classes>
+  </test> 
+  
+</suite> <!-- Suite -->
