@@ -12,25 +12,20 @@ import org.testng.annotations.Test;
 import commons.AbstractTest;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.PageFactoryManager;
 import pageObjects.RegisterPageObject;
 
-public class RegisterLogin_Level3_PageObjectModel extends AbstractTest {
-	private WebDriver driver;
-	private String loginUrl, email, userID, password;
-
-	private LoginPageObject loginPage;
-	private RegisterPageObject registerPage;
-	private HomePageObject homePage;
+public class RegisterLogin_Level4_PageFactory extends AbstractTest {
 	
   @Parameters("browser")
   @BeforeClass
   public void beforeClass(String browserName) {
+	  // Open Browser
+	  driver = openMultiBrowser(browserName);
+	  email  = "nttvy_" +randomNumber() +"@mailinator.com";
+	  // Navigate to Login Page
+	  loginPage = PageFactoryManager.getLoginPage(driver);	
 	  	
-	  	// Open Browser
-		driver = openMultiBrowser(browserName);
-		email  = "nttvy_" +randomNumber() +"@mailinator.com";
-		// Navigate to Login Page
-		loginPage = new LoginPageObject(driver);	
   }
 
     @Test
@@ -38,10 +33,8 @@ public class RegisterLogin_Level3_PageObjectModel extends AbstractTest {
 	  loginUrl = loginPage.getLoginPageURL();
 		
 		// Click on Here link
-		loginPage.clickToHereLink();
+	    registerPage = loginPage.clickToHereLink();
 		
-		// Navigate to Register Page
-		registerPage = new RegisterPageObject(driver);
 		registerPage.inputToUserEmailTextbox(email);
 		registerPage.clickToSubmitButton();
 		
@@ -53,24 +46,14 @@ public class RegisterLogin_Level3_PageObjectModel extends AbstractTest {
 	public void TC02_LoginWithAboveInformation() {
 		
 		// Open Login Page
-		registerPage.openLoginPage(loginUrl);
+		loginPage = registerPage.openLoginPage(loginUrl);
 		
-		loginPage = new LoginPageObject(driver);
 		loginPage.inputToUserIDTextbox(userID);
 		loginPage.inputToUserIDPasswordTextbox(password);
-		loginPage.clickToLoginButton();
-		
+		homePage = loginPage.clickToLoginButton();
 		
 		// Click on Login, navigate to HomePage
-		homePage = new HomePageObject(driver);
 		Assert.assertTrue(homePage.isHomePageDisplayed());
-	}
-
-
-	public int randomNumber() {
-		Random random = new Random();
-		int number = random.nextInt(999999999);
-		return number;
 	}
 
 	@AfterClass
@@ -78,4 +61,9 @@ public class RegisterLogin_Level3_PageObjectModel extends AbstractTest {
 		driver.quit();
 	}
 
+	private WebDriver driver;
+	private String loginUrl, email, userID, password;
+	private LoginPageObject loginPage;
+	private RegisterPageObject registerPage;
+	private HomePageObject homePage;
 }

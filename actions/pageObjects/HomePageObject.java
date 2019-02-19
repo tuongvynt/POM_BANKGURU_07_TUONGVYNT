@@ -12,7 +12,7 @@ public class HomePageObject extends AbstractPage{
 		driver = driverMapping;
 	}
 	
-	public boolean isHomePageDislayed() {
+	public boolean isHomePageDisplayed() {
 		waitToElementVisible(driver, HomePageUI.HOMEPAGE_WELCOME_MESSAGE);
 		return isControlDisplayed(driver, HomePageUI.HOMEPAGE_WELCOME_MESSAGE);
 	}
