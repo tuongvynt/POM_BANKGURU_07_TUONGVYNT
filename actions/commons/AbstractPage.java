@@ -175,6 +175,13 @@ public class AbstractPage {
 		WebElement element = driver.findElement(By.xpath(locator));
 		element.click();
 	}
+	
+	// clickToElement - Dynamic
+	public void clickToElement(WebDriver driver, String locator, String... dynamicValue) {
+		locator = String.format(locator, (Object[]) dynamicValue);
+		WebElement element = driver.findElement(By.xpath(locator));
+		element.click();
+	}
 
 	// sendKeysToElement
 	public void sendKeysToElement(WebDriver driver, String locator, String value) {
@@ -271,6 +278,13 @@ public class AbstractPage {
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element.isDisplayed();
 	}
+	
+	// isControlDisplayed - Dynamic
+		public boolean isControlDisplayed(WebDriver driver, String locator,  String... dynamicValue) {
+			locator = String.format(locator, (Object[]) dynamicValue);
+			WebElement element = driver.findElement(By.xpath(locator));
+			return element.isDisplayed();
+		}
 
 	// isControlSelected
 	public boolean isControlSelected(WebDriver driver, String locator) {
@@ -345,7 +359,7 @@ public class AbstractPage {
 	public void uploadAutoIT(WebDriver driver, String filePath, String locator) throws Exception {
 
 		// Click to Add file button -> open file dialog
-		executeJavascriptToElement(driver, locator);
+		clickToElementByJS(driver, locator);
 
 		Thread.sleep(3000);
 
@@ -370,7 +384,7 @@ public class AbstractPage {
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(select, null);
 
 		// Click to Add file button -> open file dialog
-		executeJavascriptToElement(driver, locator);
+		clickToElementByJS(driver, locator);
 
 		Thread.sleep(3000);
 
@@ -406,9 +420,22 @@ public class AbstractPage {
 		}
 	}
 
-	// executeJavascriptToElement
-	public Object executeJavascriptToElement(WebDriver driver, String locator) {
+	//clickToElementByJS
+	public Object clickToElementByJS(WebDriver driver, String locator) {
 		try {
+			WebElement element = driver.findElement(By.xpath(locator));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			return js.executeScript("arguments[0].click();", element);
+		} catch (Exception e) {
+			e.getMessage();
+			return null;
+		}
+	}
+	
+	//clickToElementByJS - Dynamic
+	public Object clickToElementByJS(WebDriver driver, String locator, String... dynamicValue) {
+		try {
+			locator = String.format(locator, (Object[]) dynamicValue);
 			WebElement element = driver.findElement(By.xpath(locator));
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			return js.executeScript("arguments[0].click();", element);
@@ -506,6 +533,14 @@ public class AbstractPage {
 		WebDriverWait waitExplicit = new WebDriverWait(driver, 30);
 		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
 	}
+	
+	// waitToElementVisible - Dynamic
+	public void waitToElementVisible(WebDriver driver, String locator, String... dynamicValue) {
+		locator = String.format(locator, (Object[]) dynamicValue);
+		By byLocator = By.xpath(locator);
+		WebDriverWait waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+	}
 
 	// waitToElementClickable
 	public void waitToElementClickable(WebDriver driver, String locator) {
@@ -525,6 +560,30 @@ public class AbstractPage {
 	public void waitForAlertPresence(WebDriver driver) {
 		WebDriverWait waitExplicit = new WebDriverWait(driver, 30);
 		waitExplicit.until(ExpectedConditions.alertIsPresent());
+	}
+	
+	// openDynamicPage
+	public AbstractPage openDynamicPage(WebDriver driver, String pageName) {
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+		switch (pageName) {
+		case "New Customer":
+			return PageFactoryManager.getNewCustomerPage(driver);
+		case "New Account":
+			return PageFactoryManager.getNewAccountPage(driver);
+		case "Deposit":
+			return PageFactoryManager.getDepositPage(driver);
+		case "Fund Transfer":
+			return PageFactoryManager.getFundTransferPage(driver);
+		default:
+			return PageFactoryManager.getHomePage(driver);
+		}
+	}
+	
+	// openDynamicPage 100-1000 pages
+	public void openDynamicMorePage(WebDriver driver, String pageName) {
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 	}
 	
 	public NewCustomerPageObject openNewCustomerPage(WebDriver driver) {

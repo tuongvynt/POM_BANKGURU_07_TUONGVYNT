@@ -4,7 +4,7 @@
   <test name="Run On Chrome">
   <parameter name ="browser" value ="chrome"/>
     <classes>
-       <class name="com.bankguru.account.RegisterLogin_Level5_WebDriverLifeCycle"/>
+       <class name="com.bankguru.account.RegisterLogin_Level6_DynamicLocator_RestParameter"/>
     </classes>
   </test> 
   
