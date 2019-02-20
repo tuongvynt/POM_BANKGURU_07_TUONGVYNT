@@ -2,8 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguru.FundTransferPageUI;
 import commons.AbstractPage;
+import pageUIs.FundTransferPageUI;
 
 public class FundTransferPageObject extends AbstractPage{
 	WebDriver driver;

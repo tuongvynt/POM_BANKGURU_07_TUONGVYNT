@@ -1,4 +1,4 @@
-package bankguru;
+package pageUIs;
 
 public class AbstractPageUI {
 	public static final String NEW_CUSTOMER_LINK = "//a[text()= 'New Customer']";

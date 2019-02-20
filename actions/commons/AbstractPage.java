@@ -20,17 +20,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import bankguru.AbstractPageUI;
-import bankguru.DepositPageUI;
-import bankguru.HomePageUI;
-import bankguru.NewAccountPageUI;
-import bankguru.NewCustomerPageUI;
 import pageObjects.DepositPageObject;
 import pageObjects.FundTransferPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.PageFactoryManager;
+import pageUIs.AbstractPageUI;
+import pageUIs.DepositPageUI;
+import pageUIs.HomePageUI;
+import pageUIs.NewAccountPageUI;
+import pageUIs.NewCustomerPageUI;
 
 public class AbstractPage {
 

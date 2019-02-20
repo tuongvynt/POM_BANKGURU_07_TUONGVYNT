@@ -2,9 +2,9 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguru.HomePageUI;
-import bankguru.NewAccountPageUI;
 import commons.AbstractPage;
+import pageUIs.HomePageUI;
+import pageUIs.NewAccountPageUI;
 
 public class NewAccountPageObject extends AbstractPage{
 	WebDriver driver;

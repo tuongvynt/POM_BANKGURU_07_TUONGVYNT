@@ -1,4 +1,4 @@
-package bankguru;
+package pageUIs;
 
 
 public class NewCustomerPageUI {

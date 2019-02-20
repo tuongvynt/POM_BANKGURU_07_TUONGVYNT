@@ -2,8 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguru.DepositPageUI;
 import commons.AbstractPage;
+import pageUIs.DepositPageUI;
 
 public class DepositPageObject extends AbstractPage{
 	WebDriver driver;
