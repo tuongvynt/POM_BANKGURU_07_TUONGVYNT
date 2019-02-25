@@ -22,6 +22,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.google.inject.spi.Element;
+
 import pageObjects.DepositPageObject;
 import pageObjects.FundTransferPageObject;
 import pageObjects.HomePageObject;
@@ -177,7 +179,7 @@ public class AbstractPage {
 		WebElement element = driver.findElement(By.xpath(locator));
 		element.click();
 	}
-	
+
 	// clickToElement - Dynamic
 	public void clickToElement(WebDriver driver, String locator, String... dynamicValue) {
 		locator = String.format(locator, (Object[]) dynamicValue);
@@ -277,16 +279,23 @@ public class AbstractPage {
 
 	// isControlDisplayed
 	public boolean isControlDisplayed(WebDriver driver, String locator) {
+		try {
+			WebElement element = driver.findElement(By.xpath(locator));
+			boolean status = element.isDisplayed();
+			System.out.println("Element =" + status);
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+	}
+
+	// isControlDisplayed - Dynamic
+	public boolean isControlDisplayed(WebDriver driver, String locator, String... dynamicValue) {
+		locator = String.format(locator, (Object[]) dynamicValue);
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element.isDisplayed();
 	}
-	
-	// isControlDisplayed - Dynamic
-		public boolean isControlDisplayed(WebDriver driver, String locator,  String... dynamicValue) {
-			locator = String.format(locator, (Object[]) dynamicValue);
-			WebElement element = driver.findElement(By.xpath(locator));
-			return element.isDisplayed();
-		}
 
 	// isControlSelected
 	public boolean isControlSelected(WebDriver driver, String locator) {
@@ -299,10 +308,10 @@ public class AbstractPage {
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element.isEnabled();
 	}
-	
-	//isControlUndisplayed
+
+	// isControlUndisplayed
 	public boolean isControlUndisplayed(WebDriver driver, String locator) {
-    	Date date = new Date();
+		Date date = new Date();
 		System.out.println("Started time = " + date.toString());
 		// 5s
 		overrideGlobalTimeout(driver, shortTimeout);
@@ -329,7 +338,7 @@ public class AbstractPage {
 		overrideGlobalTimeout(driver, shortTimeout);
 		locator = String.format(locator, (Object[]) value);
 		List<WebElement> elements = driver.findElements(By.xpath(locator));
-		
+
 		if (elements.size() > 0 && elements.get(0).isDisplayed()) {
 			date = new Date();
 			System.out.println("End time = " + date.toString());
@@ -471,7 +480,7 @@ public class AbstractPage {
 		}
 	}
 
-	//clickToElementByJS
+	// clickToElementByJS
 	public Object clickToElementByJS(WebDriver driver, String locator) {
 		try {
 			WebElement element = driver.findElement(By.xpath(locator));
@@ -482,8 +491,8 @@ public class AbstractPage {
 			return null;
 		}
 	}
-	
-	//clickToElementByJS - Dynamic
+
+	// clickToElementByJS - Dynamic
 	public Object clickToElementByJS(WebDriver driver, String locator, String... dynamicValue) {
 		try {
 			locator = String.format(locator, (Object[]) dynamicValue);
@@ -544,7 +553,6 @@ public class AbstractPage {
 			return null;
 		}
 	}
-	
 
 	// isImageDisplayed
 	public boolean isImageDisplayed(WebDriver driver, String locator) {
@@ -582,9 +590,13 @@ public class AbstractPage {
 	public void waitToElementVisible(WebDriver driver, String locator) {
 		By byLocator = By.xpath(locator);
 		WebDriverWait waitExplicit = new WebDriverWait(driver, 30);
-		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+		try {
+			waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
-	
+
 	// waitToElementVisible - Dynamic
 	public void waitToElementVisible(WebDriver driver, String locator, String... dynamicValue) {
 		locator = String.format(locator, (Object[]) dynamicValue);
@@ -604,7 +616,12 @@ public class AbstractPage {
 	public void waitToElementInvisible(WebDriver driver, String locator) {
 		By byLocator = By.xpath(locator);
 		WebDriverWait waitExplicit = new WebDriverWait(driver, 30);
-		waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(byLocator));
+
+		try {
+			waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(byLocator));
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	// waitForAlertPresence
@@ -612,7 +629,7 @@ public class AbstractPage {
 		WebDriverWait waitExplicit = new WebDriverWait(driver, 30);
 		waitExplicit.until(ExpectedConditions.alertIsPresent());
 	}
-	
+
 	// openDynamicPage
 	public AbstractPage openDynamicPage(WebDriver driver, String pageName) {
 		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
@@ -630,19 +647,19 @@ public class AbstractPage {
 			return PageFactoryManager.getHomePage(driver);
 		}
 	}
-	
+
 	// openDynamicPage 100-1000 pages
 	public void openDynamicMorePage(WebDriver driver, String pageName) {
 		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 	}
-	
+
 	public NewCustomerPageObject openNewCustomerPage(WebDriver driver) {
 		waitToElementVisible(driver, AbstractPageUI.NEW_CUSTOMER_LINK);
 		clickToElement(driver, AbstractPageUI.NEW_CUSTOMER_LINK);
 		return PageFactoryManager.getNewCustomerPage(driver);
 	}
-	
+
 	public NewAccountPageObject openNewAccountPage(WebDriver driver) {
 		waitToElementVisible(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
 		clickToElement(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
@@ -654,19 +671,19 @@ public class AbstractPage {
 		clickToElement(driver, AbstractPageUI.DEPOSIT_LINK);
 		return PageFactoryManager.getDepositPage(driver);
 	}
-	
+
 	public FundTransferPageObject openFundTransferPage(WebDriver driver) {
 		waitToElementVisible(driver, AbstractPageUI.FUND_TRANSFER_LINK);
 		clickToElement(driver, AbstractPageUI.FUND_TRANSFER_LINK);
 		return PageFactoryManager.getFundTransferPage(driver);
 	}
-	
+
 	public HomePageObject openHomePage(WebDriver driver) {
 		waitToElementVisible(driver, AbstractPageUI.HOME_PAGE_LINK);
 		clickToElement(driver, AbstractPageUI.HOME_PAGE_LINK);
 		return PageFactoryManager.getHomePage(driver);
 	}
-	
+
 	int shortTimeout = 5;
 	int longTimeout = 30;
 }

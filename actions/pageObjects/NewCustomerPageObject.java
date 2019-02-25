@@ -32,5 +32,15 @@ public class NewCustomerPageObject extends AbstractPage{
 		waitToElementInvisible(driver, HomePageUI.HOMEPAGE_WELCOME_MESSAGE);
 		return isControlUndisplayed(driver, HomePageUI.HOMEPAGE_WELCOME_MESSAGE);
 	}
+	
+	public boolean isHomePageUnDisplayed() {
+		waitToElementInvisible(driver, HomePageUI.HOMEPAGE_WELCOME_MESSAGE);
+		return isControlUndisplayed(driver, HomePageUI.HOMEPAGE_WELCOME_MESSAGE);
+	}
+
+	public boolean isAddCustomerFormUnDisplay() {
+		waitToElementInvisible(driver, NewCustomerPageUI.NEW_CUSTOMER_FORM);
+		return isControlUndisplayed(driver, NewCustomerPageUI.NEW_CUSTOMER_FORM);
+	}
 
 }
