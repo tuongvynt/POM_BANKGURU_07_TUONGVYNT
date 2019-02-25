@@ -5,8 +5,10 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -296,6 +298,55 @@ public class AbstractPage {
 	public boolean isControlEnabled(WebDriver driver, String locator) {
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element.isEnabled();
+	}
+	
+	//isControlUndisplayed
+	public boolean isControlUndisplayed(WebDriver driver, String locator) {
+    	Date date = new Date();
+		System.out.println("Started time = " + date.toString());
+		// 5s
+		overrideGlobalTimeout(driver, shortTimeout);
+		List<WebElement> elements = driver.findElements(By.xpath(locator));
+
+		if (elements.size() > 0 && elements.get(0).isDisplayed()) {
+			date = new Date();
+			System.out.println("End time = " + date.toString());
+			// 30s
+			overrideGlobalTimeout(driver, longTimeout);
+			return false;
+		} else {
+			date = new Date();
+			System.out.println("End time = " + date.toString());
+			// 30s
+			overrideGlobalTimeout(driver, longTimeout);
+			return true;
+		}
+	}
+
+	public boolean isControlUndisplayed(WebDriver driver, String locator, String... value) {
+		Date date = new Date();
+		System.out.println("Started time = " + date.toString());
+		overrideGlobalTimeout(driver, shortTimeout);
+		locator = String.format(locator, (Object[]) value);
+		List<WebElement> elements = driver.findElements(By.xpath(locator));
+		
+		if (elements.size() > 0 && elements.get(0).isDisplayed()) {
+			date = new Date();
+			System.out.println("End time = " + date.toString());
+			// 30s
+			overrideGlobalTimeout(driver, longTimeout);
+			return false;
+		} else {
+			date = new Date();
+			System.out.println("End time = " + date.toString());
+			// 30s
+			overrideGlobalTimeout(driver, longTimeout);
+			return true;
+		}
+	}
+
+	public void overrideGlobalTimeout(WebDriver driver, int timeOut) {
+		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
 	// User Actions - doubleClickToElement
@@ -615,4 +666,7 @@ public class AbstractPage {
 		clickToElement(driver, AbstractPageUI.HOME_PAGE_LINK);
 		return PageFactoryManager.getHomePage(driver);
 	}
+	
+	int shortTimeout = 5;
+	int longTimeout = 30;
 }
