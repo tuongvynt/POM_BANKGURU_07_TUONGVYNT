@@ -69,8 +69,8 @@ public class RegisterLogin_Level8_Assert_Verify_Log_Report2 extends AbstractTest
 		log.info("TC02_LoginWithAboveInformation - Step 4: Click on Submit button");
 		homePage = loginPage.clickToLoginButton();
 		
-		log.info("TC02_LoginWithAboveInformation - Step 5: Verfi Home Page displayed");
-		verifyTrue(homePage.isHomePageDisplayed());
+		log.info("TC02_LoginWithAboveInformation - Step 5: Verfi Home Page NOT displayed - FAILED");
+		verifyTrue(homePage.isHomePageUndisplayed());
 		
 		log.info("TC02_LoginWithAboveInformation - Step 6: Verify New Customer Page not displayed");
 		verifyTrue(homePage.isNewCustomerPageUnDisplayed());
@@ -92,7 +92,7 @@ public class RegisterLogin_Level8_Assert_Verify_Log_Report2 extends AbstractTest
 		verifyTrue(newCustomerPage.isNewCustomerPageDisplayed());
 		
 		log.info("TC03_Assert_Verify_Log_Report - Step 3: Verfi Add New Customer Page not displayed");
-		verifyTrue(newCustomerPage.isAddNewCustomerFormDisplayed());
+		verifyTrue(newCustomerPage.isAddCustomerFormUndisplayed());
 		
 		log.info("TC03_Assert_Verify_Log_Report - Step 4: Verfi Home Page not displayed");
 		verifyTrue(newCustomerPage.isHomePageUndisplayed());

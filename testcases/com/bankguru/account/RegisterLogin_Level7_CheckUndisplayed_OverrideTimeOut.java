@@ -39,7 +39,7 @@ public class RegisterLogin_Level7_CheckUndisplayed_OverrideTimeOut extends Abstr
 		Assert.assertTrue(newCustomerPage.isNewCustomerPageDisplayed());
 
 		// Verify AddNewCustomerForm is not displayed
-		Assert.assertTrue(newCustomerPage.isAddNewCustomerFormDisplayed());
+		Assert.assertTrue(newCustomerPage.isAddCustomerFormUndisplayed());
 
 		// Verify Homepage is not displayed
 		Assert.assertTrue(newCustomerPage.isHomePageUndisplayed());

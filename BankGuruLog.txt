@@ -1,8 +1,29 @@
-2019-02-26 21:33:35,728 INFO  com.bankguru.account.RegisterLogin_Global_Register - =========== START: TC01_RegisterToSystem ===========
-2019-02-26 21:33:35,730 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 1: Click on Here link
-2019-02-26 21:33:39,250 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 2: Input data on Email textbox
-2019-02-26 21:33:39,601 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 3: Click on Submit button
-2019-02-26 21:33:42,317 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 4: Get username, password
-2019-02-26 21:33:42,518 INFO  com.bankguru.account.RegisterLogin_Global_Register - =========== END: TC01_RegisterToSystem ===========
-2019-02-26 21:33:46,681 INFO  com.bankguru.account.RegisterLogin_Global_Register - ---------- QUIT BROWSER SUCCESS ----------
-2019-02-26 21:34:24,267 INFO  com.bankguru.account.RegisterLogin_Level6_DynamicLocator_RestParameter - ---------- QUIT BROWSER SUCCESS ----------
+2019-02-26 22:05:50,034 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - =========== START: TC01_RegisterToSystem ===========
+2019-02-26 22:05:50,035 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC01_RegisterToSystem - Step 1: Get login page url
+2019-02-26 22:05:50,043 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC01_RegisterToSystem - Step 2: Click on Here link
+2019-02-26 22:05:54,309 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC01_RegisterToSystem - Step 3: Input data on Email textbox
+2019-02-26 22:05:54,693 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC01_RegisterToSystem - Step 4: Click on Submit button
+2019-02-26 22:05:57,339 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC01_RegisterToSystem - Step 5: Get username, password
+2019-02-26 22:05:57,495 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - =========== END: TC01_RegisterToSystem ===========
+2019-02-26 22:05:57,497 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - =========== START: TC02_LoginWithAboveInformation ===========
+2019-02-26 22:05:57,498 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC02_LoginWithAboveInformation - Step 1: Open Login page url
+2019-02-26 22:06:01,636 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC02_LoginWithAboveInformation - Step 2: Input data on Username textbox
+2019-02-26 22:06:01,840 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC02_LoginWithAboveInformation - Step 3: Input data on Password textbox
+2019-02-26 22:06:01,970 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC02_LoginWithAboveInformation - Step 4: Click on Submit button
+2019-02-26 22:06:04,990 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC02_LoginWithAboveInformation - Step 5: Verfi Home Page NOT displayed - FAILED
+2019-02-26 22:06:35,423 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - ===FAILED===
+2019-02-26 22:06:35,427 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC02_LoginWithAboveInformation - Step 6: Verify New Customer Page not displayed
+2019-02-26 22:07:10,528 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - ===PASSED===
+2019-02-26 22:07:10,528 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC02_LoginWithAboveInformation - Step 7: Verfi Home Page displayed
+2019-02-26 22:07:10,589 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - ===PASSED===
+2019-02-26 22:07:10,590 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - =========== END: TC02_LoginWithAboveInformation ===========
+2019-02-26 22:07:10,594 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - =========== START: TC03_Assert_Verify_Log_Report ===========
+2019-02-26 22:07:10,595 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC03_Assert_Verify_Log_Report - Step 1: Open New Customer Page
+2019-02-26 22:07:12,390 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC03_Assert_Verify_Log_Report - Step 2: Verfi New Customer Page displayed
+2019-02-26 22:07:12,441 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - ===PASSED===
+2019-02-26 22:07:12,441 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC03_Assert_Verify_Log_Report - Step 3: Verfi Add New Customer Page not displayed
+2019-02-26 22:07:12,501 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - ===PASSED===
+2019-02-26 22:07:12,501 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - TC03_Assert_Verify_Log_Report - Step 4: Verfi Home Page not displayed
+2019-02-26 22:07:47,579 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - ===PASSED===
+2019-02-26 22:07:47,579 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - =========== END: TC03_Assert_Verify_Log_Report ===========
+2019-02-26 22:07:51,769 INFO  com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2 - ---------- QUIT BROWSER SUCCESS ----------

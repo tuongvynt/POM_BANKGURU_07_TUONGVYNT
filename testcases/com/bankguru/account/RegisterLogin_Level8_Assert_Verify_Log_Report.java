@@ -29,7 +29,7 @@ public class RegisterLogin_Level8_Assert_Verify_Log_Report extends AbstractTest 
 	}
 
 	@Test
-	public void TC03_Assert_Verify_Log_Report(Method testMethod) {
+	public void TC01_Assert_Verify_Log_Report(Method testMethod) {
 		log.info("=========== START: " + testMethod.getName() + " ===========");
 
 		log.info("TC03_Assert_Verify_Log_Report - Step 1: Open New Customer Page");
@@ -39,7 +39,7 @@ public class RegisterLogin_Level8_Assert_Verify_Log_Report extends AbstractTest 
 		verifyTrue(newCustomerPage.isNewCustomerPageDisplayed());
 
 		log.info("TC03_Assert_Verify_Log_Report - Step 3: Verfi Add New Customer Page not displayed");
-		verifyTrue(newCustomerPage.isAddNewCustomerFormDisplayed());
+		verifyTrue(newCustomerPage.isAddCustomerFormUndisplayed());
 
 		log.info("TC03_Assert_Verify_Log_Report - Step 4: Verfi Home Page not displayed");
 		verifyTrue(newCustomerPage.isHomePageUndisplayed());
