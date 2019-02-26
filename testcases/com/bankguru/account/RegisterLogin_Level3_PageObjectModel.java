@@ -75,7 +75,7 @@ public class RegisterLogin_Level3_PageObjectModel extends AbstractTest {
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+		closeBrowserAndDriver(driver);
 	}
 
 }

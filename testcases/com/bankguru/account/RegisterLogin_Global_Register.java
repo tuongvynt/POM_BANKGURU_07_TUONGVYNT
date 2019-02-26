@@ -1,22 +1,26 @@
 package com.bankguru.account;
 
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
+
 import commons.AbstractTest;
+import pageObjects.DepositPageObject;
+import pageObjects.FundTransferPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.NewAccountPageObject;
+import pageObjects.NewCustomerPageObject;
 import pageObjects.PageFactoryManager;
 import pageObjects.RegisterPageObject;
 
-public class RegisterLogin_Level4_PageFactory extends AbstractTest {
-	
+public class RegisterLogin_Global_Register extends AbstractTest {
+
   @Parameters("browser")
   @BeforeClass
   public void beforeClass(String browserName) {
@@ -29,31 +33,25 @@ public class RegisterLogin_Level4_PageFactory extends AbstractTest {
   }
 
     @Test
-	public void TC01_RegisterToSystem() {
-	  loginUrl = loginPage.getLoginPageURL();
-		
-		// Click on Here link
+	public void TC01_RegisterToSystem(Method testMethod) {
+    	log.info("=========== START: " + testMethod.getName()+ " ===========");
+    	
+	    log.info("TC01_RegisterToSystem - Step 1: Click on Here link");
 	    registerPage = loginPage.clickToHereLink();
 		
+	    log.info("TC01_RegisterToSystem - Step 2: Input data on Email textbox");
 		registerPage.inputToUserEmailTextbox(email);
+		
+		log.info("TC01_RegisterToSystem - Step 3: Click on Submit button");
 		registerPage.clickToSubmitButton();
 		
+		log.info("TC01_RegisterToSystem - Step 4: Get username, password");
 		userID = registerPage.getUserIDText();
 		password = registerPage.getPasswordText();	
-	}
-
-	@Test
-	public void TC02_LoginWithAboveInformation() {
 		
-		// Open Login Page
-		loginPage = registerPage.openLoginPage(loginUrl);
-		
-		loginPage.inputToUserIDTextbox(userID);
-		loginPage.inputToUserIDPasswordTextbox(password);
-		homePage = loginPage.clickToLoginButton();
-		
-		// Click on Login, navigate to HomePage
-		Assert.assertTrue(homePage.isHomePageDisplayed());
+		System.out.println("UserID:" + userID);
+		System.out.println("Password:" + password);
+		log.info("=========== END: " + testMethod.getName()+ " ===========");
 	}
 
 	@AfterClass
@@ -62,8 +60,8 @@ public class RegisterLogin_Level4_PageFactory extends AbstractTest {
 	}
 
 	private WebDriver driver;
-	private String loginUrl, email, userID, password;
+	private String email;
+	public static String userID, password;
 	private LoginPageObject loginPage;
 	private RegisterPageObject registerPage;
-	private HomePageObject homePage;
 }

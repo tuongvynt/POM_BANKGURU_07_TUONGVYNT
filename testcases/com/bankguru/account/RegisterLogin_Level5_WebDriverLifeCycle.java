@@ -86,7 +86,7 @@ public class RegisterLogin_Level5_WebDriverLifeCycle extends AbstractTest {
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+		closeBrowserAndDriver(driver);
 	}
 
 	private WebDriver driver;
