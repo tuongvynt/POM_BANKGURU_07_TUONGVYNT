@@ -31,5 +31,9 @@ public class PageFactoryManager {
 	public static FundTransferPageObject getFundTransferPage(WebDriver driver) {
 		return new FundTransferPageObject(driver);
 	}
+	
+	public static EditCustomerPageObject getEditCustomerPage(WebDriver driver) {
+		return new EditCustomerPageObject(driver);
+	}
 
 }

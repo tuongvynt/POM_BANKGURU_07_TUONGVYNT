@@ -193,11 +193,17 @@ public class AbstractPage {
 		element.sendKeys(value);
 	}
 
+	// sendKeysToElement
+	public void clearTextInElement(WebDriver driver, String locator) {
+		WebElement element = driver.findElement(By.xpath(locator));
+		element.clear();
+	}
+
 	// selectItemInHTMLDropDown
 	public void selectItemInHTMLDropDown(WebDriver driver, String locator, String valueInDropdown) {
 		WebElement element = driver.findElement(By.xpath(locator));
 		Select select = new Select(element);
-		select.deselectByVisibleText(valueInDropdown);
+		select.selectByValue(valueInDropdown);
 	}
 
 	// getSelectedItemInHTMLDropDown
@@ -637,6 +643,8 @@ public class AbstractPage {
 		switch (pageName) {
 		case "New Customer":
 			return PageFactoryManager.getNewCustomerPage(driver);
+		case "Edit Customer":
+			return PageFactoryManager.getEditCustomerPage(driver);
 		case "New Account":
 			return PageFactoryManager.getNewAccountPage(driver);
 		case "Deposit":

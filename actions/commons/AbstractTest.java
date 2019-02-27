@@ -1,5 +1,7 @@
 package commons;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -46,6 +48,12 @@ public class AbstractTest {
 		return driver;
 	}
 
+	public static String getCurrentDateTime() {  
+	     SimpleDateFormat formatter = new SimpleDateFormat("MddMyy_HHmmss");  
+	     Date date = new Date();  
+	     return formatter.format(date);
+	}
+	
 	public int randomNumber() {
 		Random random = new Random();
 		int number = random.nextInt(999999999);
