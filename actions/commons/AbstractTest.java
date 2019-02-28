@@ -44,7 +44,6 @@ public class AbstractTest {
 		driver.get(Constants.DEV_URL);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		System.out.println("Driver in Abstract Test = " + driver.toString());
 		return driver;
 	}
 
@@ -64,9 +63,9 @@ public class AbstractTest {
 		boolean pass = true;
 		try {
 			if (condition == true)
-				log.info("===PASSED===");
+				log.info("=== PASSED ===");
 			else
-				log.info("===FAILED===");
+				log.info("=== FAILED ===");
 			Assert.assertTrue(condition);
 		} catch (Throwable e) {
 			pass = false;
@@ -86,9 +85,9 @@ public class AbstractTest {
 		boolean pass = true;
 		try {
 			if (condition == true)
-				log.info("===PASSED===");
+				log.info("=== PASSED ===");
 			else
-				log.info("===FAILED===");
+				log.info("=== FAILED ===");
 			Assert.assertFalse(condition);
 		} catch (Throwable e) {
 			pass = false;
@@ -106,9 +105,9 @@ public class AbstractTest {
 		boolean pass = true;
 		try {
 			if (actual == expected)
-				log.info("===PASSED===");
+				log.info("=== PASSED ===");
 			else
-				log.info("===FAILED===");
+				log.info("=== FAILED ===");
 			Assert.assertEquals(actual, expected);
 		} catch (Throwable e) {
 			pass = false;
@@ -125,9 +124,7 @@ public class AbstractTest {
 	protected void closeBrowserAndDriver(WebDriver driver) {
 		try {
 			String osName = System.getProperty("os.name").toLowerCase();
-			System.out.println("OS name = " + osName);
-
-			String cmd = "";
+     		String cmd = "";
 			if (driver != null) {
 				driver.quit();
 			}

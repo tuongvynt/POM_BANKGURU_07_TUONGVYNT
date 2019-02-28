@@ -11,4 +11,5 @@ public class NewAccountPageUI {
 	public static final String RESET_BUTTON = "//input[@name='res']";
 	public static final String HOME_LINK = "//a[text()='Home']";
 	public static final String CURRENT_AMOUNT_TEXT = "//td[text()='Current Amount']/following-sibling::td[1]";
+	public static final String ACCOUNT_ID_TEXT = "//td[text()='Account ID']/following-sibling::td[1]";
 }

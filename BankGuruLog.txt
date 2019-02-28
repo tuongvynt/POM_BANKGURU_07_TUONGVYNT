@@ -1,50 +1,65 @@
-2019-02-27 21:32:29,286 INFO  com.bankguru.account.RegisterLogin_Global_Register - =========== START: TC01_RegisterToSystem ===========
-2019-02-27 21:32:29,287 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 1: Click on Here link
-2019-02-27 21:32:31,327 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 2: Input data on Email textbox
-2019-02-27 21:32:31,732 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 3: Click on Submit button
-2019-02-27 21:32:34,107 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 4: Get username, password
-2019-02-27 21:32:34,324 INFO  com.bankguru.account.RegisterLogin_Global_Register - =========== END: TC01_RegisterToSystem ===========
-2019-02-27 21:32:37,865 INFO  com.bankguru.account.RegisterLogin_Global_Register - ---------- QUIT BROWSER SUCCESS ----------
-2019-02-27 21:32:49,920 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully ===========
-2019-02-27 21:32:49,921 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 01: Open New Customer Page
-2019-02-27 21:32:52,171 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 02: Input Customer name
-2019-02-27 21:32:52,459 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 03: Input Customer date of birth
-2019-02-27 21:32:52,645 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 04: Input Customer address
-2019-02-27 21:32:52,972 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 05: Input Customer pin
-2019-02-27 21:32:53,124 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 06: Input Customer state
-2019-02-27 21:32:53,245 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 07: Input Customer pin
-2019-02-27 21:32:53,404 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 08: Input Customer telephone number
-2019-02-27 21:32:53,609 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 09: Input Customer email
-2019-02-27 21:32:54,031 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 10: Input Customer password
-2019-02-27 21:32:54,205 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 11: Click on Submit button
-2019-02-27 21:32:56,239 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 12: Verify message customer registered displays
-2019-02-27 21:32:56,317 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
-2019-02-27 21:32:56,317 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 13: Get Customer Registerd ID
-2019-02-27 21:32:56,404 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully ===========
-2019-02-27 21:32:56,407 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully ===========
-2019-02-27 21:32:56,407 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 01: Open Edit Customer Form
-2019-02-27 21:32:58,033 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 02: Input Customer ID
-2019-02-27 21:32:58,189 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 03: Click on Submit button
-2019-02-27 21:32:59,887 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 04: Verify Edit customer page displays
-2019-02-27 21:32:59,953 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
-2019-02-27 21:32:59,953 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 05: Input Customer address
-2019-02-27 21:33:00,246 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 06: Input Customer pin
-2019-02-27 21:33:00,426 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 07: Input Customer state
-2019-02-27 21:33:00,586 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 08: Input Customer pin
-2019-02-27 21:33:00,767 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 09: Input Customer telephone number
-2019-02-27 21:33:00,959 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 10: Input Customer email
-2019-02-27 21:33:01,321 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 11: Click on Submit button
-2019-02-27 21:33:03,192 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 12: Verify message customer edited displays
-2019-02-27 21:33:03,265 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
-2019-02-27 21:33:03,265 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully ===========
-2019-02-27 21:33:03,267 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully ===========
-2019-02-27 21:33:03,267 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 01: Open New Account Page
-2019-02-27 21:33:04,978 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 02: Input Customer ID
-2019-02-27 21:33:05,132 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 03: Select account type is Savings
-2019-02-27 21:33:05,243 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 04: Input Initial Deposit
-2019-02-27 21:33:05,357 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 05: Click on Submit button
-2019-02-27 21:33:07,239 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 06: Verify message account generated displays
-2019-02-27 21:33:07,303 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
-2019-02-27 21:33:07,303 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 07: Verify Current Amount is equal to Initial Deposit
-2019-02-27 21:33:07,379 INFO  com.bankguru.payment.Payment_Function - ===FAILED===
-2019-02-27 21:33:07,380 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully ===========
+2019-02-28 20:38:43,437 INFO  com.bankguru.account.RegisterLogin_Global_Register - =========== START: TC01_RegisterToSystem ===========
+2019-02-28 20:38:43,439 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 1: Click on Here link
+2019-02-28 20:38:50,949 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 2: Input data on Email textbox
+2019-02-28 20:38:51,902 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 3: Click on Submit button
+2019-02-28 20:39:00,746 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 4: Get username, password
+2019-02-28 20:39:00,915 INFO  com.bankguru.account.RegisterLogin_Global_Register - =========== END: TC01_RegisterToSystem ===========
+2019-02-28 20:39:06,626 INFO  com.bankguru.account.RegisterLogin_Global_Register - ---------- QUIT BROWSER SUCCESS ----------
+2019-02-28 20:39:34,035 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully ===========
+2019-02-28 20:39:34,035 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 01: Open New Customer Page
+2019-02-28 20:39:42,951 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 02: Input Customer name
+2019-02-28 20:39:43,323 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 03: Input Customer date of birth
+2019-02-28 20:39:43,552 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 04: Input Customer address
+2019-02-28 20:39:43,949 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 05: Input Customer pin
+2019-02-28 20:39:44,128 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 06: Input Customer state
+2019-02-28 20:39:44,265 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 07: Input Customer pin
+2019-02-28 20:39:44,465 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 08: Input Customer telephone number
+2019-02-28 20:39:44,693 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 09: Input Customer email
+2019-02-28 20:39:45,177 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 10: Input Customer password
+2019-02-28 20:39:45,373 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 11: Click on Submit button
+2019-02-28 20:39:52,797 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 12: Verify message customer registered displays
+2019-02-28 20:39:52,890 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-02-28 20:39:52,890 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 13: Get Customer Registerd ID
+2019-02-28 20:39:52,985 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully ===========
+2019-02-28 20:39:52,987 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully ===========
+2019-02-28 20:39:52,987 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 01: Open Edit Customer Form
+2019-02-28 20:39:57,599 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 02: Input Customer ID
+2019-02-28 20:39:57,797 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 03: Click on Submit button
+2019-02-28 20:40:06,002 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 04: Verify Edit customer page displays
+2019-02-28 20:40:06,075 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-02-28 20:40:06,075 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 05: Input Customer address
+2019-02-28 20:40:06,466 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 06: Input Customer pin
+2019-02-28 20:40:06,687 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 07: Input Customer state
+2019-02-28 20:40:06,867 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 08: Input Customer pin
+2019-02-28 20:40:07,070 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 09: Input Customer telephone number
+2019-02-28 20:40:07,281 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 10: Input Customer email
+2019-02-28 20:40:07,691 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 11: Click on Submit button
+2019-02-28 20:40:12,751 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 12: Verify message customer edited displays
+2019-02-28 20:40:12,809 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-02-28 20:40:12,809 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully ===========
+2019-02-28 20:40:12,811 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully ===========
+2019-02-28 20:40:12,811 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 01: Open New Account Page
+2019-02-28 20:40:16,527 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 02: Input Customer ID
+2019-02-28 20:40:16,685 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 03: Select account type is Savings
+2019-02-28 20:40:16,801 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 04: Input Initial Deposit
+2019-02-28 20:40:16,966 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 05: Click on Submit button
+2019-02-28 20:40:21,316 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 06: Verify message account generated displays
+2019-02-28 20:40:21,388 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-02-28 20:40:21,388 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 07: Verify Current Amount is equal to Initial Deposit
+2019-02-28 20:40:21,466 INFO  com.bankguru.payment.Payment_Function - === FAILED ===
+2019-02-28 20:40:21,466 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 08: Get Account generated ID
+2019-02-28 20:40:21,553 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully ===========
+2019-02-28 20:40:21,556 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC04_TransferMoneyToCurentAccount ===========
+2019-02-28 20:40:21,556 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 01: Open Deposit Page
+2019-02-28 20:40:24,344 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 02: Input Account number
+2019-02-28 20:40:24,516 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 03: Input Amount
+2019-02-28 20:40:24,660 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 04: Input Description
+2019-02-28 20:40:24,805 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 05: Click on Submit button
+2019-02-28 20:40:27,340 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 06: Verify message transaction created displays
+2019-02-28 20:40:27,406 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-02-28 20:40:27,406 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 07: Verify Current Balance
+2019-02-28 20:40:27,484 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 08: Calculate Current Balance
+2019-02-28 20:40:27,484 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 09: Verify Current Balance displays properly
+2019-02-28 20:40:27,484 INFO  com.bankguru.payment.Payment_Function - === FAILED ===
+2019-02-28 20:40:27,484 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurentAccount - Step 10: Get transaction ID
+2019-02-28 20:40:27,569 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC04_TransferMoneyToCurentAccount ===========

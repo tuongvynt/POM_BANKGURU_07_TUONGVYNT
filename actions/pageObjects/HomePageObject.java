@@ -16,7 +16,6 @@ public class HomePageObject extends AbstractPage{
 	public boolean isHomePageDisplayed() {
 		waitToElementVisible(driver, HomePageUI.HOMEPAGE_WELCOME_MESSAGE);
 		boolean status = isControlDisplayed(driver, HomePageUI.HOMEPAGE_WELCOME_MESSAGE);
-		System.out.println("Home page displayed status =" + status);
 		return status;
 	}
 

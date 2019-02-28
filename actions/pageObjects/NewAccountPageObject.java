@@ -59,4 +59,8 @@ public class NewAccountPageObject extends AbstractPage{
 		waitToElementVisible(driver, NewAccountPageUI.CURRENT_AMOUNT_TEXT);
 		return getTextInElement(driver, NewAccountPageUI.CURRENT_AMOUNT_TEXT);
 	}
+	public String getAccountIDText() {
+		waitToElementVisible(driver, NewAccountPageUI.ACCOUNT_ID_TEXT);
+		return getTextInElement(driver, NewAccountPageUI.ACCOUNT_ID_TEXT);
+	}
 }

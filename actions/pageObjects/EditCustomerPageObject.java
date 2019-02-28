@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import pageUIs.EditCustomerPageUI;
-import pageUIs.HomePageUI;
 import pageUIs.NewCustomerPageUI;
 
 public class EditCustomerPageObject extends AbstractPage{
