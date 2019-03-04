@@ -650,6 +650,10 @@ public class AbstractPage {
 			return PageFactoryManager.getDepositPage(driver);
 		case "Fund Transfer":
 			return PageFactoryManager.getFundTransferPage(driver);
+		case "Withdrawal":
+			return PageFactoryManager.getWithdrawalPage(driver);
+		case "Balance Enquiry":
+			return PageFactoryManager.getBalanceEnquiryPage(driver);
 		default:
 			return PageFactoryManager.getHomePage(driver);
 		}

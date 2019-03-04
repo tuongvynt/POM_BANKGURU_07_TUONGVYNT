@@ -2,6 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+import commons.AbstractPage;
+
 public class PageFactoryManager {
 	
 	public static LoginPageObject getLoginPage(WebDriver driver) {
@@ -34,6 +36,14 @@ public class PageFactoryManager {
 	
 	public static EditCustomerPageObject getEditCustomerPage(WebDriver driver) {
 		return new EditCustomerPageObject(driver);
+	}
+
+	public static WithdrawalPageObject getWithdrawalPage(WebDriver driver) {
+		return new WithdrawalPageObject(driver);
+	}
+
+	public static BalanceEnquiryPageObject getBalanceEnquiryPage(WebDriver driver) {
+		return new BalanceEnquiryPageObject(driver);
 	}
 
 }

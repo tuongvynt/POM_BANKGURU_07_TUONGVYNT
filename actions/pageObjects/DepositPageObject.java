@@ -65,7 +65,7 @@ public class DepositPageObject extends AbstractPage{
 		return getTextInElement(driver, DepositPageUI.TRANSACTION_ID_TEXT);
 	}
 
-	public String calculateBalance(String initialDeposit, String amountTransfer) {
+	public String depositMoney(String initialDeposit, String amountTransfer) {
 		String calculatedBalance = Integer.toString(Integer.parseInt(initialDeposit) + Integer.parseInt(amountTransfer));
 		return calculatedBalance;
 	}

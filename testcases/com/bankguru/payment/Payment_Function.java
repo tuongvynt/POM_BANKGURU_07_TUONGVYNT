@@ -12,13 +12,16 @@ import org.testng.annotations.Test;
 import com.bankguru.account.RegisterLogin_Global_Register;
 
 import commons.AbstractTest;
+import pageObjects.BalanceEnquiryPageObject;
 import pageObjects.DepositPageObject;
 import pageObjects.EditCustomerPageObject;
+import pageObjects.FundTransferPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.PageFactoryManager;
+import pageObjects.WithdrawalPageObject;
 
 public class Payment_Function extends AbstractTest {
 
@@ -45,7 +48,6 @@ public class Payment_Function extends AbstractTest {
 	// Account
 	String accountType = "Savings";
 	String initialDeposit = "50000";
-	String currentAmount;
 	String createdAccountID;
 	
 	// Transfer
@@ -53,8 +55,16 @@ public class Payment_Function extends AbstractTest {
 	String description = "Deposit";
 	String transactionID;
 	String currentBalance;
-	String calculatedBalance;
+	
+	// Withdraw
+	String amountWithdraw = "15000";
+	String descriptionWithdraw = "Deposit";
+	String transactionIDWithdraw;
 
+	// Fund transfer
+	String accountPayeesNo = "57202";
+	String amountTransferIntoOtherAccount = "10000";
+	
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
@@ -190,8 +200,9 @@ public class Payment_Function extends AbstractTest {
 		verifyTrue(newAccountPage.isAccountGeneratedSuccessfully());
 		
 		log.info("Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 07: Verify Current Amount is equal to Initial Deposit");
-		currentAmount = newAccountPage.getCurrentAmountText();
-		verifyEquals(currentAmount, initialDeposit);
+		String currentAmountText = newAccountPage.getCurrentAmountText();
+		verifyEquals(currentAmountText, initialDeposit);
+		currentBalance = initialDeposit;
 		
 		log.info("Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 08: Get Account generated ID");
 		createdAccountID = newAccountPage.getAccountIDText();
@@ -200,40 +211,145 @@ public class Payment_Function extends AbstractTest {
 	}
 	
 	@Test
-	public void Payment_TC04_TransferMoneyToCurentAccount(Method testMethod) {
+	public void Payment_TC04_TransferMoneyToCurrentAccount(Method testMethod) {
 
 		log.info("=========== START: " + testMethod.getName() + " ===========");
 		
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 01: Open Deposit Page");
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 01: Open Deposit Page");
 		depositPage = (DepositPageObject) homePage.openDynamicPage(driver, "Deposit");
 		Assert.assertTrue(depositPage.isDepositPageDisplayed());
 		
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 02: Input Account number");
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 02: Input Account number");
 		depositPage.inputToAccountNoTextbox(createdAccountID);
 		
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 03: Input Amount");
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 03: Input Amount");
 		depositPage.inputToAmountTextbox(amountTransfer);
 		
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 04: Input Description");
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 04: Input Description");
 		depositPage.inputToDescriptionTextbox(description);
 		
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 05: Click on Submit button");
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 05: Click on Submit button");
 		depositPage.clickToSubmitButton();
 		
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 06: Verify message transaction created displays");
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 06: Verify message transaction created displays");
 		verifyTrue(depositPage.isTransactionCreatedSuccessfully(createdAccountID));
 		
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 07: Verify Current Balance");
-		currentBalance = depositPage.getCurrentBalanceText();
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 07: Verify Current Balance");
+		String currentBalanceText = depositPage.getCurrentBalanceText();
 
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 08: Calculate Current Balance");
-		calculatedBalance = depositPage.calculateBalance(initialDeposit, amountTransfer);
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 08: Calculate Current Balance");
+		currentBalance = depositPage.depositMoney(currentBalance, amountTransfer);
 
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 09: Verify Current Balance displays properly");
-		verifyEquals(currentBalance, calculatedBalance);
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 09: Verify Current Balance displays properly");
+		verifyEquals(currentBalanceText, currentBalance);
 		
-		log.info("Payment_TC04_TransferMoneyToCurentAccount - Step 10: Get transaction ID");
+		log.info("Payment_TC04_TransferMoneyToCurrentAccount - Step 10: Get transaction ID");
 		transactionID = depositPage.getTransactionIDText();
+				
+		log.info("=========== END: " + testMethod.getName() + " ===========");
+	}
+	
+	@Test
+	public void Payment_TC05_WithdrawMoneyFromCurrentAccount(Method testMethod) {
+
+		log.info("=========== START: " + testMethod.getName() + " ===========");
+		
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 01: Open Withdrawal Page");
+		withdrawPage = (WithdrawalPageObject) depositPage.openDynamicPage(driver, "Withdrawal");
+		Assert.assertTrue(withdrawPage.isWithdrawalPageDisplayed());
+		
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 02: Input Account number");
+		withdrawPage.inputToAccountNoTextbox(createdAccountID);
+		
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 03: Input Amount");
+		withdrawPage.inputToAmountTextbox(amountWithdraw);
+		
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 04: Input Description");
+		withdrawPage.inputToDescriptionTextbox(descriptionWithdraw);
+		
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 05: Click on Submit button");
+		withdrawPage.clickToSubmitButton();
+		
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 06: Verify message withdraw transaction  created displays");
+		verifyTrue(withdrawPage.isTransactionCreatedSuccessfully(createdAccountID));
+		
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 07: Verify Current Balance");
+		String currentBalanceText = withdrawPage.getCurrentBalanceText();
+
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 08: Calculate Current Balance");
+		currentBalance = withdrawPage.withdrawMoney(currentBalance, amountWithdraw);
+
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 09: Verify Current Balance displays properly");
+		verifyEquals(currentBalanceText, currentBalance);
+		
+		log.info("Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 10: Get transaction ID");
+		transactionID = withdrawPage.getTransactionIDText();
+				
+		log.info("=========== END: " + testMethod.getName() + " ===========");
+	}
+	
+	@Test
+	public void Payment_TC06_TransferMoneyIntoAnotherAccount(Method testMethod) {
+
+		log.info("=========== START: " + testMethod.getName() + " ===========");
+		
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 01: Open Fund Transfer Page");
+		fundTransferPage = (FundTransferPageObject) withdrawPage.openDynamicPage(driver, "Fund Transfer");
+		Assert.assertTrue(fundTransferPage.isFundTransferPageDisplayed());
+		
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 02: Input Payers Account number");
+		fundTransferPage.inputToPayersAccountNoTextbox(createdAccountID);
+		
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 03: Input Payees Account number");
+		fundTransferPage.inputToPayeesAccountNoTextbox(accountPayeesNo);
+		
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 04: Input Amount");
+		fundTransferPage.inputToAmountTextbox(amountTransferIntoOtherAccount);
+		
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 04: Input Description");
+		fundTransferPage.inputToDescriptionTextbox(descriptionWithdraw);
+		
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 05: Click on Submit button");
+		fundTransferPage.clickToSubmitButton();
+		
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 06: Verify message transfer displays");
+		verifyTrue(fundTransferPage.isTransferSuccessfully());
+		
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 07: Get Amount text");
+		String actualAmountText = fundTransferPage.getAmountText();
+
+		log.info("Payment_TC06_TransferMoneyIntoAnotherAccount - Step 09: Verify Amount displays properly");
+		verifyEquals(actualAmountText, amountTransferIntoOtherAccount);
+				
+		log.info("=========== END: " + testMethod.getName() + " ===========");
+	}
+	
+	@Test
+	public void Payment_TC07_CheckCurrentAccountBalance(Method testMethod) {
+
+		log.info("=========== START: " + testMethod.getName() + " ===========");
+		
+		log.info("Payment_TC07_CheckCurrentAccountBalance - Step 01: Open Balance Enquiry Page");
+		balanceEnquiryPage = (BalanceEnquiryPageObject) fundTransferPage.openDynamicPage(driver, "Balance Enquiry");
+		Assert.assertTrue(balanceEnquiryPage.isBalanceEnquiryFormDisplayed());
+		
+		log.info("Payment_TC07_CheckCurrentAccountBalance - Step 02: Input Account number");
+		balanceEnquiryPage.inputToAccountNoTextbox(createdAccountID);
+		
+		log.info("Payment_TC07_CheckCurrentAccountBalance - Step 05: Click on Submit button");
+		balanceEnquiryPage.clickToSubmitButton();
+		
+		log.info("Payment_TC07_CheckCurrentAccountBalance - Step 06: Verify Balance Details page displays");
+		verifyTrue(balanceEnquiryPage.isGetBalanceDetailsSuccessfully(createdAccountID));
+		
+		log.info("Payment_TC07_CheckCurrentAccountBalance - Step 07: Get Current Balance");
+		String actualBalanceText = balanceEnquiryPage.getBalanceText();
+		
+		log.info("Payment_TC07_CheckCurrentAccountBalance - Step 08: Calculate Current Balance");
+		currentBalance = balanceEnquiryPage.transferMoney(currentBalance, amountTransferIntoOtherAccount);
+
+		log.info("Payment_TC07_CheckCurrentAccountBalance - Step 09: Verify Current Balance displays properly");
+		verifyEquals(actualBalanceText, currentBalance);
 				
 		log.info("=========== END: " + testMethod.getName() + " ===========");
 	}
@@ -250,6 +366,9 @@ public class Payment_Function extends AbstractTest {
 	private NewCustomerPageObject newCustomerPage;
 	private NewAccountPageObject newAccountPage;
 	private DepositPageObject depositPage;
+	private WithdrawalPageObject withdrawPage;
+	private FundTransferPageObject fundTransferPage;
+	private BalanceEnquiryPageObject balanceEnquiryPage;
 	
 
 }
