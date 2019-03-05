@@ -102,13 +102,26 @@ public class AbstractTest {
 	}
 
 	private boolean checkEquals(Object actual, Object expected) {
-		boolean pass = true;
+    	boolean pass = true;
+		boolean status;
 		try {
-			if (actual == expected)
-				log.info("=== PASSED ===");
-			else
-				log.info("=== FAILED ===");
-			Assert.assertEquals(actual, expected);
+			if (actual instanceof String && expected instanceof String) {
+				actual = actual.toString().trim();
+				System.out.println("Actual = " + actual);
+				expected = expected.toString().trim();
+				System.out.println("Expected = " + expected);
+				status = (actual.equals(expected));
+			} else {
+				status = (actual == expected);
+			}
+
+			System.out.println("Compare value = " + status);
+			if (status) {
+				log.info("===PASSED===");
+			} else {
+				log.info("===FAILED===");
+			}
+			Assert.assertEquals(actual, expected, "Value is not matching!");
 		} catch (Throwable e) {
 			pass = false;
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);

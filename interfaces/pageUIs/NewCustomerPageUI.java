@@ -19,6 +19,6 @@ public class NewCustomerPageUI {
 	public static final String SUBMIT_BUTTON = "//input[@type='submit']";
 	public static final String RESET_BUTTON = "//input[@name='res']";
 	public static final String HOME_LINK = "//a[text()='Home']";
-	public static final String CUSTOMERID_TEXT = "//td[text()='Customer ID']/following-sibling::td[1]";
+	public static final String CUSTOMERID_TEXT = "//td[text()='Customer ID']/following-sibling::td";
 	
 }

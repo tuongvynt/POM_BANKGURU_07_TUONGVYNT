@@ -190,10 +190,19 @@ public class AbstractPage {
 	// sendKeysToElement
 	public void sendKeysToElement(WebDriver driver, String locator, String value) {
 		WebElement element = driver.findElement(By.xpath(locator));
+		element.clear();
 		element.sendKeys(value);
 	}
 
-	// sendKeysToElement
+	// sendKeysToElement Dynamic
+	public void sendKeysToElement(WebDriver driver, String locator, String valueToSendkey, String... dynamicValue) {
+		locator = String.format(locator, (Object[]) dynamicValue);
+		WebElement element = driver.findElement(By.xpath(locator));
+		element.clear();
+		element.sendKeys(valueToSendkey);
+	}
+
+	// clear text in Element
 	public void clearTextInElement(WebDriver driver, String locator) {
 		WebElement element = driver.findElement(By.xpath(locator));
 		element.clear();
@@ -260,6 +269,13 @@ public class AbstractPage {
 		WebElement element = driver.findElement(By.xpath(locator));
 		return element.getText();
 	}
+	
+	// getTextInElement - Dynamic
+		public String getTextInElement(WebDriver driver, String locator, String... dynamicValue) {
+			locator = String.format(locator, (Object[]) dynamicValue);
+			WebElement element = driver.findElement(By.xpath(locator));
+			return element.getText();
+		}
 
 	// countElementNumber
 	public int countElementNumber(WebDriver driver, String locator) {
@@ -693,6 +709,37 @@ public class AbstractPage {
 		waitToElementVisible(driver, AbstractPageUI.HOME_PAGE_LINK);
 		clickToElement(driver, AbstractPageUI.HOME_PAGE_LINK);
 		return PageFactoryManager.getHomePage(driver);
+	}
+
+	// Dynamic
+	public void inputToDynamicTextbox(WebDriver driver, String textboxNameID, String valueToSendkey) {
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, textboxNameID);
+		sendKeysToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, valueToSendkey, textboxNameID);
+	}
+
+	public void inputToDynamicTextarea(WebDriver driver, String textareNameID, String valueToSendkey) {
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTAREA, textareNameID);
+		sendKeysToElement(driver, AbstractPageUI.DYNAMIC_TEXTAREA, valueToSendkey, textareNameID);
+	}
+
+	public void clickToDynamicRadioButotn(WebDriver driver, String radioButtonNameValue) {
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON, radioButtonNameValue);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON, radioButtonNameValue);
+	}
+
+	public void clickToDynamicButton(WebDriver driver, String buttonNameID) {
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, buttonNameID);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, buttonNameID);
+	}
+
+	public boolean isDynamicPageDisplayed(WebDriver driver, String pageHeadingName) {
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_PAGE_HEADING, pageHeadingName);
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_PAGE_HEADING, pageHeadingName);
+	}
+
+	public String getDynamicTextInTable(WebDriver driver, String rowName) {
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_ROW_NAME, rowName);
+		return getTextInElement(driver, AbstractPageUI.DYNAMIC_TABLE_ROW_NAME, rowName);
 	}
 
 	int shortTimeout = 5;

@@ -16,9 +16,10 @@
 	<test name="Run On Chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.bankguru.account.RegisterLogin_Global_Register" />
-			<class name="com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report" /> 
-			<class name="com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2" /> 
+			<!-- <class name="com.bankguru.account.RegisterLogin_Global_Register" /> -->
+			<!-- <class name="com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report" /> 
+			<class name="com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2" />  -->
+			<class name="com.bankguru.account.RegisterLogin_Level9_DynamicPageObjectPageElementPageUI" /> 
 		</classes>
 	</test>
 

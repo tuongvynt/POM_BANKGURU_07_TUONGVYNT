@@ -33,7 +33,10 @@ public class RegisterLogin_Level9_DynamicPageObjectPageElementPageUI extends Abs
 
 		// Test Data Preparation
 		newCustomerName = "AUTOMATION TESTING";
+		newGender = "f";
+		expectedGender = "female";
 		newDob = "01-01-1989";
+		expectedDOB = "1989-01-01";
 		newAdress = "PO Boc 911 8331 Duis Avenue";
 		newCity = "Tampa";
 		newState = "FL";
@@ -81,61 +84,100 @@ public class RegisterLogin_Level9_DynamicPageObjectPageElementPageUI extends Abs
 		log.info("TC02_LoginWithAboveInformation - Step 4: Click on Submit button");
 		homePage = loginPage.clickToLoginButton();
 
-		log.info("TC02_LoginWithAboveInformation - Step 5: Verfi Home Page NOT displayed - FAILED");
-		verifyTrue(homePage.isHomePageUndisplayed());
-
-		log.info("TC02_LoginWithAboveInformation - Step 6: Verify New Customer Page not displayed");
-		verifyTrue(homePage.isNewCustomerPageUnDisplayed());
-
-		log.info("TC02_LoginWithAboveInformation - Step 7: Verfi Home Page displayed");
+		log.info("TC02_LoginWithAboveInformation - Step 5: Verfi Home Page displayed");
 		verifyTrue(homePage.isHomePageDisplayed());
+		log.info("=========== END: " + testMethod.getName() + " ===========");
+	}
+
+	@Test
+	public void TC03_OpenDynamicPageAndCheckPageDisplayed(Method testMethod) {
+		log.info("=========== START: " + testMethod.getName() + " ===========");
+
+		// Homepage > New Customer - So luong Pages it
+		newCustomerPage = (NewCustomerPageObject) homePage.openDynamicPage(driver, "New Customer");
+		verifyTrue(newCustomerPage.isDynamicPageDisplayed(driver, "Add New Customer"));
+
+		// New Customer > New Account
+		newAccountPage = (NewAccountPageObject) newCustomerPage.openDynamicPage(driver, "New Account");
+		verifyTrue(newAccountPage.isDynamicPageDisplayed(driver, "Add new account form"));
+
+		// New Account > Deposit
+		depositPage = (DepositPageObject) newAccountPage.openDynamicPage(driver, "Deposit");
+		verifyTrue(depositPage.isDynamicPageDisplayed(driver, "Amount Deposit Form"));
+
+		// Deposit > Homepage
+		homePage = (HomePageObject) depositPage.openDynamicPage(driver, "Manager");
+		verifyTrue(homePage.isHomePageDisplayed());
+
+		// Homepage > New Account
+		newAccountPage = (NewAccountPageObject) homePage.openDynamicPage(driver, "New Account");
+		verifyTrue(newAccountPage.isDynamicPageDisplayed(driver, "Add new account form"));
+
+		// New Account > New Customer
+		newCustomerPage = (NewCustomerPageObject) newAccountPage.openDynamicPage(driver, "New Customer");
+		verifyTrue(newCustomerPage.isDynamicPageDisplayed(driver, "Add New Customer"));
+
 		log.info("=========== END: " + testMethod.getName() + " ===========");
 	}
 
 	// 02182019
 	@Test
-	public void TC03_DynamicPageObjectPageElementPageUI(Method testMethod) {
+	public void TC04_DynamicPageObjectPageElementPageUI(Method testMethod) {
 		log.info("=========== START: " + testMethod.getName() + " ===========");
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 01: Open New Customer Page");
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 01: Open New Customer Page");
 		newCustomerPage = (NewCustomerPageObject) homePage.openDynamicPage(driver, "New Customer");
 		Assert.assertTrue(newCustomerPage.isNewCustomerPageDisplayed());
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 02: Input Customer name");
-		newCustomerPage.inputToCustomerNameTextbox(newCustomerName);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 02: Input Customer name");
+		newCustomerPage.inputToDynamicTextbox(driver, "name", newCustomerName);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 03: Input Customer date of birth");
-		newCustomerPage.inputToDateOfBirthTextbox(newDob);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 03: Select gender");
+		newCustomerPage.clickToDynamicRadioButotn(driver, newGender);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 04: Input Customer address");
-		newCustomerPage.inputToAddressTextbox(newAdress);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 04: Input Customer date of birth");
+		newCustomerPage.inputToDynamicTextbox(driver, "dob", newDob);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 05: Input Customer pin");
-		newCustomerPage.inputToCityTextbox(newCity);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 05: Input Customer address");
+		newCustomerPage.inputToDynamicTextarea(driver, "addr", newAdress);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 06: Input Customer state");
-		newCustomerPage.inputToStateTextbox(newState);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 06: Input Customer city");
+		newCustomerPage.inputToDynamicTextbox(driver, "city", newCity);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 07: Input Customer pin");
-		newCustomerPage.inputToPinTextbox(newPin);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 07: Input Customer state");
+		newCustomerPage.inputToDynamicTextbox(driver, "state", newState);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 08: Input Customer telephone number");
-		newCustomerPage.inputToTelephoneNumberTextbox(newTelephoneNumber);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 08: Input Customer pin");
+		newCustomerPage.inputToDynamicTextbox(driver, "pinno", newPin);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 09: Input Customer email");
-		newCustomerPage.inputToEmailTextbox(newEmail);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 09: Input Customer telephone number");
+		newCustomerPage.inputToDynamicTextbox(driver, "telephoneno", newTelephoneNumber);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 10: Input Customer password");
-		newCustomerPage.inputToPasswordTextbox(newPassword);
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 10: Input Customer email");
+		newCustomerPage.inputToDynamicTextbox(driver, "emailid", newEmail);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 11: Click on Submit button");
-		newCustomerPage.clickToSubmitButton();
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 11: Input Customer password");
+		newCustomerPage.inputToDynamicTextbox(driver, "password", newPassword);
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 12: Verify message customer registered displays");
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 12: Click on Submit button");
+		newCustomerPage.clickToDynamicButton(driver, "sub");
+
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 13: Verify message customer registered displays");
 		verifyTrue(newCustomerPage.isCustomerRegisteredSuccessfully());
 
-		log.info("TC03_DynamicPageObjectPageElementPageUI - Step 13: Get Customer Registerd ID");
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 14: Get Customer Registerd ID");
 		createdCustomerID = newCustomerPage.getCustomerIDText();
+		
+		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 14: Verify created data");
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Customer Name"), newCustomerName);
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Gender"), expectedGender);
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Birthdate"), expectedDOB);
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Address"), newAdress);
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "City"), newCity);
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "State"), newState);
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Pin"), newPin);
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Mobile No."), newTelephoneNumber);
+		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Email"), newEmail);
 
 		log.info("=========== END: " + testMethod.getName() + " ===========");
 	}
@@ -154,5 +196,6 @@ public class RegisterLogin_Level9_DynamicPageObjectPageElementPageUI extends Abs
 	private NewAccountPageObject newAccountPage;
 	private DepositPageObject depositPage;
 	private FundTransferPageObject fundTransferPage;
-	private String newCustomerName, newDob, newAdress,	newCity, newState, newPin, newTelephoneNumber, newEmail, newPassword, createdCustomerID;
+	private String newCustomerName, newGender, newDob, newAdress, newCity, newState, newPin, newTelephoneNumber,
+			newEmail, newPassword, createdCustomerID, expectedGender, expectedDOB;
 }
