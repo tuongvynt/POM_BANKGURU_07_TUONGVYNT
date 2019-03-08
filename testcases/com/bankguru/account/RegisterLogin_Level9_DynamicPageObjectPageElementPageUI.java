@@ -35,7 +35,7 @@ public class RegisterLogin_Level9_DynamicPageObjectPageElementPageUI extends Abs
 		newCustomerName = "AUTOMATION TESTING";
 		newGender = "f";
 		expectedGender = "female";
-		newDob = "01-01-1989";
+		newDob = "01/01/1989";
 		expectedDOB = "1989-01-01";
 		newAdress = "PO Boc 911 8331 Duis Avenue";
 		newCity = "Tampa";
@@ -48,7 +48,7 @@ public class RegisterLogin_Level9_DynamicPageObjectPageElementPageUI extends Abs
 	}
 
 	@Test
-	public void TC01_RegisterToSystem(Method testMethod) {
+	public void TC01_RegisterToSystem(Method testMethod) throws Exception {
 		log.info("=========== START: " + testMethod.getName() + " ===========");
 		log.info("TC01_RegisterToSystem - Step 1: Get login page url");
 		loginUrl = loginPage.getLoginPageURL();
@@ -69,7 +69,7 @@ public class RegisterLogin_Level9_DynamicPageObjectPageElementPageUI extends Abs
 	}
 
 	@Test
-	public void TC02_LoginWithAboveInformation(Method testMethod) {
+	public void TC02_LoginWithAboveInformation(Method testMethod) throws Exception {
 		log.info("=========== START: " + testMethod.getName() + " ===========");
 
 		log.info("TC02_LoginWithAboveInformation - Step 1: Open Login page url");
@@ -116,68 +116,6 @@ public class RegisterLogin_Level9_DynamicPageObjectPageElementPageUI extends Abs
 		// New Account > New Customer
 		newCustomerPage = (NewCustomerPageObject) newAccountPage.openDynamicPage(driver, "New Customer");
 		verifyTrue(newCustomerPage.isDynamicPageDisplayed(driver, "Add New Customer"));
-
-		log.info("=========== END: " + testMethod.getName() + " ===========");
-	}
-
-	// 02182019
-	@Test
-	public void TC04_DynamicPageObjectPageElementPageUI(Method testMethod) {
-		log.info("=========== START: " + testMethod.getName() + " ===========");
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 01: Open New Customer Page");
-		newCustomerPage = (NewCustomerPageObject) homePage.openDynamicPage(driver, "New Customer");
-		Assert.assertTrue(newCustomerPage.isNewCustomerPageDisplayed());
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 02: Input Customer name");
-		newCustomerPage.inputToDynamicTextbox(driver, "name", newCustomerName);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 03: Select gender");
-		newCustomerPage.clickToDynamicRadioButotn(driver, newGender);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 04: Input Customer date of birth");
-		newCustomerPage.inputToDynamicTextbox(driver, "dob", newDob);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 05: Input Customer address");
-		newCustomerPage.inputToDynamicTextarea(driver, "addr", newAdress);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 06: Input Customer city");
-		newCustomerPage.inputToDynamicTextbox(driver, "city", newCity);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 07: Input Customer state");
-		newCustomerPage.inputToDynamicTextbox(driver, "state", newState);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 08: Input Customer pin");
-		newCustomerPage.inputToDynamicTextbox(driver, "pinno", newPin);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 09: Input Customer telephone number");
-		newCustomerPage.inputToDynamicTextbox(driver, "telephoneno", newTelephoneNumber);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 10: Input Customer email");
-		newCustomerPage.inputToDynamicTextbox(driver, "emailid", newEmail);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 11: Input Customer password");
-		newCustomerPage.inputToDynamicTextbox(driver, "password", newPassword);
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 12: Click on Submit button");
-		newCustomerPage.clickToDynamicButton(driver, "sub");
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 13: Verify message customer registered displays");
-		verifyTrue(newCustomerPage.isCustomerRegisteredSuccessfully());
-
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 14: Get Customer Registerd ID");
-		createdCustomerID = newCustomerPage.getCustomerIDText();
-		
-		log.info("TC04_DynamicPageObjectPageElementPageUI - Step 14: Verify created data");
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Customer Name"), newCustomerName);
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Gender"), expectedGender);
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Birthdate"), expectedDOB);
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Address"), newAdress);
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "City"), newCity);
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "State"), newState);
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Pin"), newPin);
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Mobile No."), newTelephoneNumber);
-		verifyEquals(newCustomerPage.getDynamicTextInTable(driver, "Email"), newEmail);
 
 		log.info("=========== END: " + testMethod.getName() + " ===========");
 	}

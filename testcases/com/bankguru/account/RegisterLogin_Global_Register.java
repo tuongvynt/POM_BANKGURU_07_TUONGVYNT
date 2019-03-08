@@ -33,7 +33,7 @@ public class RegisterLogin_Global_Register extends AbstractTest {
   }
 
     @Test
-	public void TC01_RegisterToSystem(Method testMethod) {
+	public void TC01_RegisterToSystem(Method testMethod) throws Exception {
     	log.info("=========== START: " + testMethod.getName()+ " ===========");
     	
 	    log.info("TC01_RegisterToSystem - Step 1: Click on Here link");

@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import pageUIs.LoginPageUI;
 import pageUIs.RegisterPageUI;
 
 public class RegisterPageObject extends AbstractPage {
@@ -17,9 +18,14 @@ public class RegisterPageObject extends AbstractPage {
 		sendKeysToElement(driver, RegisterPageUI.EMAIL_TEXTBOX, email);
 	}
 	
-	public void clickToSubmitButton() {
+	public void clickToSubmitButton() throws Exception {
 		waitToElementVisible(driver,RegisterPageUI.SUBMIT_BUTTON);
+		if (driver.toString().toLowerCase().contains("internetexplorer")){
+			clickToElementByJS(driver, RegisterPageUI.SUBMIT_BUTTON);
+			Thread.sleep(5000);
+		} else {
 		clickToElement(driver, RegisterPageUI.SUBMIT_BUTTON);
+		}
 	}
 	
 	public String getUserIDText() {
@@ -33,8 +39,11 @@ public class RegisterPageObject extends AbstractPage {
 
 	}
 	
-	public LoginPageObject openLoginPage(String loginPageURL) {
+	public LoginPageObject openLoginPage(String loginPageURL) throws Exception {
 		openURL(driver, loginPageURL);
+		if (driver.toString().toLowerCase().contains("internetexplorer")){
+			Thread.sleep(5000);
+		} 
 		return PageFactoryManager.getLoginPage(driver);
 
 	}

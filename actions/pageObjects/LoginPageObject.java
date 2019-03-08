@@ -28,15 +28,27 @@ public class LoginPageObject extends AbstractPage {
 		
 	}
 	  
-	public HomePageObject clickToLoginButton() {
+	public HomePageObject clickToLoginButton() throws Exception {
 		waitToElementVisible(driver,LoginPageUI.LOGIN_BUTTON);
-		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+		
+		if (driver.toString().toLowerCase().contains("internetexplorer")){
+			clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+			Thread.sleep(5000);
+		} else {
+			clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+		}
+		
 		return PageFactoryManager.getHomePage(driver);
 	}
 	
-	public RegisterPageObject clickToHereLink() {
+	public RegisterPageObject clickToHereLink() throws Exception {
 		waitToElementVisible(driver,LoginPageUI.HERE_LINK);
-		clickToElement(driver, LoginPageUI.HERE_LINK);
+		if (driver.toString().toLowerCase().contains("internetexplorer")){
+			clickToElementByJS(driver, LoginPageUI.HERE_LINK);
+			Thread.sleep(5000);
+		} else {
+			clickToElement(driver, LoginPageUI.HERE_LINK);
+		}
 		return PageFactoryManager.getRegisterPage(driver);
 
 	}

@@ -34,7 +34,7 @@ public class RegisterLogin_Level5_WebDriverLifeCycle extends AbstractTest {
   }
 
     @Test
-	public void TC01_RegisterToSystem() {
+	public void TC01_RegisterToSystem() throws Exception {
 	  loginUrl = loginPage.getLoginPageURL();
 		
 		// Click on Here link
@@ -48,7 +48,7 @@ public class RegisterLogin_Level5_WebDriverLifeCycle extends AbstractTest {
 	}
 
 	@Test
-	public void TC02_LoginWithAboveInformation() {
+	public void TC02_LoginWithAboveInformation() throws Exception {
 		
 		// Open Login Page
 		loginPage = registerPage.openLoginPage(loginUrl);

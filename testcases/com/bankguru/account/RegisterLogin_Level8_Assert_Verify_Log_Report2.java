@@ -33,7 +33,7 @@ public class RegisterLogin_Level8_Assert_Verify_Log_Report2 extends AbstractTest
   }
 
     @Test
-	public void TC01_RegisterToSystem(Method testMethod) {
+	public void TC01_RegisterToSystem(Method testMethod) throws Exception {
     	log.info("=========== START: " + testMethod.getName()+ " ===========");
     	log.info("TC01_RegisterToSystem - Step 1: Get login page url");
 	    loginUrl = loginPage.getLoginPageURL();
@@ -54,7 +54,7 @@ public class RegisterLogin_Level8_Assert_Verify_Log_Report2 extends AbstractTest
 	}
 
 	@Test
-	public void TC02_LoginWithAboveInformation(Method testMethod) {
+	public void TC02_LoginWithAboveInformation(Method testMethod) throws Exception {
 		log.info("=========== START: " + testMethod.getName()+ " ===========");
 		
 		log.info("TC02_LoginWithAboveInformation - Step 1: Open Login page url");

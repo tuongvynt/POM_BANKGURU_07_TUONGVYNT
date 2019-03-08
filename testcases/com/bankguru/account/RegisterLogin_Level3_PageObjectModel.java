@@ -34,7 +34,7 @@ public class RegisterLogin_Level3_PageObjectModel extends AbstractTest {
   }
 
     @Test
-	public void TC01_RegisterToSystem() {
+	public void TC01_RegisterToSystem() throws Exception {
 	  loginUrl = loginPage.getLoginPageURL();
 		
 		// Click on Here link
@@ -50,7 +50,7 @@ public class RegisterLogin_Level3_PageObjectModel extends AbstractTest {
 	}
 
 	@Test
-	public void TC02_LoginWithAboveInformation() {
+	public void TC02_LoginWithAboveInformation() throws Exception {
 		
 		// Open Login Page
 		registerPage.openLoginPage(loginUrl);

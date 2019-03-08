@@ -5,12 +5,18 @@ import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.IOCase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -18,7 +24,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AbstractTest {
 	private WebDriver driver;
+	private final String workingDir = System.getProperty("user.dir"); 
 	protected final Log log;
+	
 
 	protected AbstractTest() {
 		log = LogFactory.getLog(getClass());
@@ -26,25 +34,66 @@ public class AbstractTest {
 
 	protected WebDriver openMultiBrowser(String browserName) {
 		if (browserName.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			WebDriverManager.firefoxdriver().arch64().setup();
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
+			FirefoxOptions options = new FirefoxOptions();
+			driver = new FirefoxDriver(options);
 		} else if (browserName.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			ChromeOptions options =new ChromeOptions();
+			options.addArguments("--incognito");
+			options.addArguments("--disable-extentions");
+			options.addArguments("disable-infobars");
+			options.addArguments("start-maximized");
+			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+			driver = new ChromeDriver(capabilities);
 		} else if (browserName.equals("chromeheadless")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("headless");
 			options.addArguments("window-size=1920x1080");
 			driver = new ChromeDriver(options);
-		} else if (browserName.equals("internetexplorer")) {
-			WebDriverManager.iedriver().arch32().setup();
-			WebDriverManager.iedriver().arch64().setup();
+		} else if (browserName.equals("firefoxheadless")) {
+			WebDriverManager.firefoxdriver().arch64().setup();
+			FirefoxBinary firefoxBinary = new FirefoxBinary();
+			firefoxBinary.addCommandLineOptions("--headless");
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxHeadlessLog.txt");
+			FirefoxOptions firefoxOptions = new FirefoxOptions();
+			firefoxOptions.setBinary(firefoxBinary);
+			driver = new FirefoxDriver(firefoxOptions);
+			
+		} else if (browserName.equals("ie")) {
+			WebDriverManager.iedriver().architecture(io.github.bonigarcia.wdm.Architecture.X32).setup();
+			DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+			capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+			capability.setCapability(CapabilityType.ELEMENT_SCROLL_BEHAVIOR, true);
+			capability.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
+			capability.setCapability("ignoreProtectedModeSettings", true);
+			capability.setCapability("ignoreZoomSetting", true);
+			capability.setCapability("requireWindowFocus", true);
+			capability.setJavascriptEnabled(true);
+			capability.setCapability("enableElementCacheCleanp", true);
+			capability.setBrowserName("internet explorer");
+			capability.setPlatform(org.openqa.selenium.Platform.ANY);
+			driver = new InternetExplorerDriver(capability);
 		}
 		driver.get(Constants.DEV_URL);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		return driver;
+	}
+
+	private FirefoxOptions FirefoxOptions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private WebDriver FirefoxDriver(FirefoxOptions options) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public static String getCurrentDateTime() {  
@@ -137,6 +186,7 @@ public class AbstractTest {
 	protected void closeBrowserAndDriver(WebDriver driver) {
 		try {
 			String osName = System.getProperty("os.name").toLowerCase();
+			driver.manage().deleteAllCookies();
      		String cmd = "";
 			if (driver != null) {
 				driver.quit();

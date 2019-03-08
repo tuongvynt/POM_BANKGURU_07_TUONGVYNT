@@ -19,7 +19,7 @@ public class RegisterLogin_Level7_CheckUndisplayed_OverrideTimeOut extends Abstr
 
 	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName) throws Exception {
 		driver = openMultiBrowser(browserName);
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		loginPage.inputToUserIDTextbox(RegisterLogin_Global_Register.userID);
