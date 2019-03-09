@@ -6,13 +6,13 @@
 		<listener class-name="commons.ExtentReportListener" />
 	</listeners>
 
-	<!-- <test name="Run On Chrome">
+    <test name="Run On Chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.bankguru.account.RegisterLogin_Global_Register" />
 			<class name="com.bankguru.payment.Payment_Function" /> 
 		</classes>
-	</test> -->
+	</test> 
 	<!-- <test name="Run On chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
@@ -22,14 +22,14 @@
 			<class name="com.bankguru.account.RegisterLogin_Level9_DynamicPageObjectPageElementPageUI" /> 
 		</classes>
 	</test> -->
-	<test name="Run On firefox">
+	<!-- <test name="Run On firefox">
 		<parameter name="browser" value="ie" />
 		<classes>
-			<!-- <class name="com.bankguru.account.RegisterLogin_Global_Register" /> -->
-			<!-- <class name="com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report" /> 
-			<class name="com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2" />  -->
+			<class name="com.bankguru.account.RegisterLogin_Global_Register" />
+			<class name="com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report" /> 
+			<class name="com.bankguru.account.RegisterLogin_Level8_Assert_Verify_Log_Report2" /> 
 			<class name="com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser" /> 
 		</classes>
 	</test>
-
+ -->
 </suite> <!-- Suite -->

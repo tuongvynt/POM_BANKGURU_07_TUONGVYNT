@@ -1,22 +1,103 @@
-2019-03-09 01:15:06,827 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - =========== START: TC01_RegisterToSystem ===========
-2019-03-09 01:15:06,830 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC01_RegisterToSystem - Step 1: Get login page url
-2019-03-09 01:15:06,878 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC01_RegisterToSystem - Step 2: Click on Here link
-2019-03-09 01:15:13,186 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC01_RegisterToSystem - Step 3: Input data on Email textbox
-2019-03-09 01:15:15,534 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC01_RegisterToSystem - Step 4: Click on Submit button
-2019-03-09 01:15:21,324 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC01_RegisterToSystem - Step 5: Get username, password
-2019-03-09 01:15:22,735 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC02_LoginWithAboveInformation - Step 1: Open Login page url
-2019-03-09 01:15:30,791 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC02_LoginWithAboveInformation - Step 2: Input data on Username textbox
-2019-03-09 01:15:32,402 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC02_LoginWithAboveInformation - Step 3: Input data on Password textbox
-2019-03-09 01:15:33,707 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC02_LoginWithAboveInformation - Step 4: Click on Submit button
-2019-03-09 01:15:44,822 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - TC02_LoginWithAboveInformation - Step 5: Verfi Home Page displayed
-2019-03-09 01:15:45,691 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - === PASSED ===
-2019-03-09 01:15:45,695 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - =========== END: TC01_RegisterToSystem ===========
-2019-03-09 01:15:45,697 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - =========== START: TC03_OpenDynamicPageAndCheckPageDisplayed ===========
-2019-03-09 01:15:50,265 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - === PASSED ===
-2019-03-09 01:15:55,272 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - === PASSED ===
-2019-03-09 01:16:00,086 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - === PASSED ===
-2019-03-09 01:16:05,376 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - === PASSED ===
-2019-03-09 01:16:11,352 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - === PASSED ===
-2019-03-09 01:16:15,819 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - === PASSED ===
-2019-03-09 01:16:15,819 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - =========== END: TC03_OpenDynamicPageAndCheckPageDisplayed ===========
-2019-03-09 01:16:20,685 INFO  com.bankguru.account.RegisterLogin_Level10_SeleniumLatest_HandleIEBrowser - ---------- QUIT BROWSER SUCCESS ----------
+2019-03-09 10:09:38,089 INFO  com.bankguru.account.RegisterLogin_Global_Register - =========== START: TC01_RegisterToSystem ===========
+2019-03-09 10:09:38,090 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 1: Click on Here link
+2019-03-09 10:09:41,741 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 2: Input data on Email textbox
+2019-03-09 10:09:42,274 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 3: Click on Submit button
+2019-03-09 10:09:45,484 INFO  com.bankguru.account.RegisterLogin_Global_Register - TC01_RegisterToSystem - Step 4: Get username, password
+2019-03-09 10:09:45,701 INFO  com.bankguru.account.RegisterLogin_Global_Register - =========== END: TC01_RegisterToSystem ===========
+2019-03-09 10:09:51,028 INFO  com.bankguru.account.RegisterLogin_Global_Register - ---------- QUIT BROWSER SUCCESS ----------
+2019-03-09 10:10:07,519 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully ===========
+2019-03-09 10:10:07,519 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 01: Open New Customer Page
+2019-03-09 10:10:10,492 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 02: Input Customer name
+2019-03-09 10:10:10,905 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 03: Input Customer date of birth
+2019-03-09 10:10:11,221 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 04: Input Customer address
+2019-03-09 10:10:11,743 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 05: Input Customer pin
+2019-03-09 10:10:12,073 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 06: Input Customer state
+2019-03-09 10:10:12,324 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 07: Input Customer pin
+2019-03-09 10:10:12,597 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 08: Input Customer telephone number
+2019-03-09 10:10:12,866 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 09: Input Customer email
+2019-03-09 10:10:13,370 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 10: Input Customer password
+2019-03-09 10:10:13,686 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 11: Click on Submit button
+2019-03-09 10:10:16,584 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 12: Verify message customer registered displays
+2019-03-09 10:10:16,684 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-03-09 10:10:16,684 INFO  com.bankguru.payment.Payment_Function - Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully - Step 13: Get Customer Registerd ID
+2019-03-09 10:10:16,768 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC01_CreateNewCustomerAccount_CheckCreatedSuccessfully ===========
+2019-03-09 10:10:16,770 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully ===========
+2019-03-09 10:10:16,770 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 01: Open Edit Customer Form
+2019-03-09 10:10:19,069 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 02: Input Customer ID
+2019-03-09 10:10:19,277 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 03: Click on Submit button
+2019-03-09 10:10:21,868 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 04: Verify Edit customer page displays
+2019-03-09 10:10:21,963 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-03-09 10:10:21,963 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 05: Input Customer address
+2019-03-09 10:10:22,280 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 06: Input Customer pin
+2019-03-09 10:10:22,554 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 07: Input Customer state
+2019-03-09 10:10:22,786 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 08: Input Customer pin
+2019-03-09 10:10:23,093 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 09: Input Customer telephone number
+2019-03-09 10:10:23,365 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 10: Input Customer email
+2019-03-09 10:10:23,771 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 11: Click on Submit button
+2019-03-09 10:10:26,215 INFO  com.bankguru.payment.Payment_Function - Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully - Step 12: Verify message customer edited displays
+2019-03-09 10:10:26,311 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-03-09 10:10:26,311 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC02_EditCustomerAccount_CheckEditedSuccessfully ===========
+2019-03-09 10:10:26,314 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully ===========
+2019-03-09 10:10:26,315 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 01: Open New Account Page
+2019-03-09 10:10:29,041 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 02: Input Customer ID
+2019-03-09 10:10:29,245 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 03: Select account type is Savings
+2019-03-09 10:10:29,352 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 04: Input Initial Deposit
+2019-03-09 10:10:29,526 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 05: Click on Submit button
+2019-03-09 10:10:32,339 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 06: Verify message account generated displays
+2019-03-09 10:10:32,434 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-03-09 10:10:32,434 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 07: Verify Current Amount is equal to Initial Deposit
+2019-03-09 10:10:32,567 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
+2019-03-09 10:10:32,567 INFO  com.bankguru.payment.Payment_Function - Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully - Step 08: Get Account generated ID
+2019-03-09 10:10:32,678 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC03_CreateNewAccount_CheckCreatedSuccessfully ===========
+2019-03-09 10:10:32,680 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC04_TransferMoneyToCurrentAccount ===========
+2019-03-09 10:10:32,681 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 01: Open Deposit Page
+2019-03-09 10:10:35,000 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 02: Input Account number
+2019-03-09 10:10:35,203 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 03: Input Amount
+2019-03-09 10:10:35,389 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 04: Input Description
+2019-03-09 10:10:35,612 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 05: Click on Submit button
+2019-03-09 10:10:38,017 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 06: Verify message transaction created displays
+2019-03-09 10:10:38,114 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-03-09 10:10:38,114 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 07: Verify Current Balance
+2019-03-09 10:10:38,193 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 08: Calculate Current Balance
+2019-03-09 10:10:38,194 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 09: Verify Current Balance displays properly
+2019-03-09 10:10:38,194 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
+2019-03-09 10:10:38,194 INFO  com.bankguru.payment.Payment_Function - Payment_TC04_TransferMoneyToCurrentAccount - Step 10: Get transaction ID
+2019-03-09 10:10:38,273 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC04_TransferMoneyToCurrentAccount ===========
+2019-03-09 10:10:38,275 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC05_WithdrawMoneyFromCurrentAccount ===========
+2019-03-09 10:10:38,276 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 01: Open Withdrawal Page
+2019-03-09 10:10:40,565 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 02: Input Account number
+2019-03-09 10:10:40,788 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 03: Input Amount
+2019-03-09 10:10:40,986 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 04: Input Description
+2019-03-09 10:10:41,194 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 05: Click on Submit button
+2019-03-09 10:10:44,602 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 06: Verify message withdraw transaction  created displays
+2019-03-09 10:10:44,695 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-03-09 10:10:44,696 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 07: Verify Current Balance
+2019-03-09 10:10:44,771 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 08: Calculate Current Balance
+2019-03-09 10:10:44,771 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 09: Verify Current Balance displays properly
+2019-03-09 10:10:44,771 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
+2019-03-09 10:10:44,771 INFO  com.bankguru.payment.Payment_Function - Payment_TC05_WithdrawMoneyFromCurrentAccount - Step 10: Get transaction ID
+2019-03-09 10:10:44,853 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC05_WithdrawMoneyFromCurrentAccount ===========
+2019-03-09 10:10:44,855 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC06_TransferMoneyIntoAnotherAccount ===========
+2019-03-09 10:10:44,856 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 01: Open Fund Transfer Page
+2019-03-09 10:10:47,255 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 02: Input Payers Account number
+2019-03-09 10:10:47,443 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 03: Input Payees Account number
+2019-03-09 10:10:47,643 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 04: Input Amount
+2019-03-09 10:10:47,995 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 04: Input Description
+2019-03-09 10:10:48,219 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 05: Click on Submit button
+2019-03-09 10:10:50,888 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 06: Verify message transfer displays
+2019-03-09 10:10:50,970 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-03-09 10:10:50,971 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 07: Get Amount text
+2019-03-09 10:10:51,048 INFO  com.bankguru.payment.Payment_Function - Payment_TC06_TransferMoneyIntoAnotherAccount - Step 09: Verify Amount displays properly
+2019-03-09 10:10:51,048 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
+2019-03-09 10:10:51,048 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC06_TransferMoneyIntoAnotherAccount ===========
+2019-03-09 10:10:51,050 INFO  com.bankguru.payment.Payment_Function - =========== START: Payment_TC07_CheckCurrentAccountBalance ===========
+2019-03-09 10:10:51,050 INFO  com.bankguru.payment.Payment_Function - Payment_TC07_CheckCurrentAccountBalance - Step 01: Open Balance Enquiry Page
+2019-03-09 10:10:53,609 INFO  com.bankguru.payment.Payment_Function - Payment_TC07_CheckCurrentAccountBalance - Step 02: Input Account number
+2019-03-09 10:10:53,774 INFO  com.bankguru.payment.Payment_Function - Payment_TC07_CheckCurrentAccountBalance - Step 05: Click on Submit button
+2019-03-09 10:10:56,295 INFO  com.bankguru.payment.Payment_Function - Payment_TC07_CheckCurrentAccountBalance - Step 06: Verify Balance Details page displays
+2019-03-09 10:10:56,384 INFO  com.bankguru.payment.Payment_Function - === PASSED ===
+2019-03-09 10:10:56,384 INFO  com.bankguru.payment.Payment_Function - Payment_TC07_CheckCurrentAccountBalance - Step 07: Get Current Balance
+2019-03-09 10:10:56,446 INFO  com.bankguru.payment.Payment_Function - Payment_TC07_CheckCurrentAccountBalance - Step 08: Calculate Current Balance
+2019-03-09 10:10:56,447 INFO  com.bankguru.payment.Payment_Function - Payment_TC07_CheckCurrentAccountBalance - Step 09: Verify Current Balance displays properly
+2019-03-09 10:10:56,447 INFO  com.bankguru.payment.Payment_Function - ===PASSED===
+2019-03-09 10:10:56,447 INFO  com.bankguru.payment.Payment_Function - =========== END: Payment_TC07_CheckCurrentAccountBalance ===========
