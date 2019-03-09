@@ -43,7 +43,7 @@ public class AbstractTest {
 			WebDriverManager.chromedriver().setup();
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			ChromeOptions options =new ChromeOptions();
-			options.addArguments("--incognito");
+			//options.addArguments("--incognito");
 			options.addArguments("--disable-extentions");
 			options.addArguments("disable-infobars");
 			options.addArguments("start-maximized");
@@ -86,18 +86,14 @@ public class AbstractTest {
 		return driver;
 	}
 
-	private FirefoxOptions FirefoxOptions() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private WebDriver FirefoxDriver(FirefoxOptions options) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public static String getCurrentDateTime() {  
 	     SimpleDateFormat formatter = new SimpleDateFormat("MddMyy_HHmmss");  
+	     Date date = new Date();  
+	     return formatter.format(date);
+	}
+	
+	public static String getCurrentDate() {  
+	     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
 	     Date date = new Date();  
 	     return formatter.format(date);
 	}
@@ -156,15 +152,11 @@ public class AbstractTest {
 		try {
 			if (actual instanceof String && expected instanceof String) {
 				actual = actual.toString().trim();
-				System.out.println("Actual = " + actual);
 				expected = expected.toString().trim();
-				System.out.println("Expected = " + expected);
 				status = (actual.equals(expected));
 			} else {
 				status = (actual == expected);
 			}
-
-			System.out.println("Compare value = " + status);
 			if (status) {
 				log.info("===PASSED===");
 			} else {

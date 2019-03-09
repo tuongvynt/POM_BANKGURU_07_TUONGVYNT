@@ -97,8 +97,8 @@ public class AbstractPage {
 	}
 
 	// Alert - getTextAlert
-	public void getTextAlert(WebDriver driver) {
-		driver.switchTo().alert().getText();
+	public String getTextAlert(WebDriver driver) {
+		return driver.switchTo().alert().getText();
 	}
 
 	// Alert - waitToAlertPresent
@@ -645,12 +645,6 @@ public class AbstractPage {
 		}
 	}
 
-	// waitForAlertPresence
-	public void waitForAlertPresence(WebDriver driver) {
-		WebDriverWait waitExplicit = new WebDriverWait(driver, 30);
-		waitExplicit.until(ExpectedConditions.alertIsPresent());
-	}
-
 	// openDynamicPage
 	public AbstractPage openDynamicPage(WebDriver driver, String pageName) {
 		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
@@ -670,6 +664,10 @@ public class AbstractPage {
 			return PageFactoryManager.getWithdrawalPage(driver);
 		case "Balance Enquiry":
 			return PageFactoryManager.getBalanceEnquiryPage(driver);
+		case "Delete Account":
+			return PageFactoryManager.getDeleteAccountPage(driver);
+		case "Delete Customer":
+			return PageFactoryManager.getDeleteCustomerPage(driver);
 		default:
 			return PageFactoryManager.getHomePage(driver);
 		}
