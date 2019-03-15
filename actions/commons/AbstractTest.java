@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.IOCase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +19,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AbstractTest {

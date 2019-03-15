@@ -28,8 +28,8 @@
 	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.8.11.1.jar"/>
 	<classpathentry kind="lib" path="lib/testng-6.9.9.jar"/>
 	<classpathentry kind="lib" path="lib/velocity-dep-1.5.jar"/>
-	<classpathentry kind="lib" path="lib/webdrivermanager-2.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/org-apache-commons-logging.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-server-standalone-3.14.0.jar"/>
+	<classpathentry kind="lib" path="lib/webdrivermanager-3.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
